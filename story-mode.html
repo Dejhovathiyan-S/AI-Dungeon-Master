@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dungeon Master - Story Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">AI DUNGEON MASTER - STORY MODE</div>
+                <h1>Create Your Narrative</h1>
+                <div class="subtitle">Craft compelling stories with AI collaboration</div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button>
+                <button onclick="newStory()" class="btn story-mode">New Story</button>
+            </div>
+        </header>
+        
+        <div class="game-container">
+            <div class="chat-area" style="flex: 1;">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message ai-message">
+                        Welcome to Story Mode! Let's create something amazing together...
+                    </div>
+                </div>
+                
+                <div class="input-area">
+                    <input type="text" id="user-input" class="text-input" placeholder="Tell your story, ask a question, or describe what happens next...">
+                    <button id="send-btn" class="btn story-mode">Send</button>
+                </div>
+                
+                <div class="quick-choices">
+                    <button id="continue-btn" class="choice-btn">✨ Continue Story</button>
+                    <button id="summarize-btn" class="choice-btn">📋 Summarize</button>
+                    <button id="reframe-btn" class="choice-btn">🔄 Change Perspective</button>
+                    <button id="inspire-btn" class="choice-btn">💡 Get Inspiration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="story-mode.js"></script>
+</body>
+</html>

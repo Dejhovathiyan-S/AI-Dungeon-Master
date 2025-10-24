@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Mode Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+    </div>
+    
+    <div class="setup-container">
+        <div class="setup-card">
+            <h1>Game Mode Setup</h1>
+            <form id="setup-form">
+                <div class="form-group">
+                    <label for="player-name">Character Name:</label>
+                    <input type="text" id="player-name" class="form-control" placeholder="Enter your character name" value="Adventurer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="genre">Choose Genre:</label>
+                    <select id="genre" class="form-control">
+                        <option value="fantasy">Fantasy</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                        <option value="mystery">Mystery</option>
+                    </select>
+                </div>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn game-mode" onclick="startGame()">Start Adventure</button>
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='/'">Back</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function startGame() {
+            const playerName = document.getElementById('player-name').value || 'Adventurer';
+            const genre = document.getElementById('genre').value;
+            window.location.href = '/game-mode?name=' + encodeURIComponent(playerName) + '&genre=' + genre;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dungeon Master - Game Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">AI DUNGEON MASTER - GAME MODE</div>
+                <h1>Your Adventure Awaits</h1>
+                <div class="subtitle">Shape your destiny through choices and battles</div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <button onclick="window.location.href='/'" class="btn btn-secondary">Back to Main</button>
+                <button onclick="restartGame()" class="btn story-mode">Restart Game</button>
+            </div>
+        </header>
+        
+        <div class="game-container">
+            <div class="chat-area">
+                <div id="chat-messages" class="chat-messages">
+                    <div class="message ai-message">
+                        Welcome to Game Mode! The AI Dungeon Master is setting up your adventure...
+                    </div>
+                </div>
+                
+                <div id="quick-choices" class="quick-choices">
+                    <!-- Quick choice buttons will be added here dynamically -->
+                </div>
+                
+                <div class="input-area">
+                    <input type="text" id="user-input" class="text-input" placeholder="Enter your action or command (e.g., 'attack the goblin', 'explore the cave', 'use health potion')...">
+                    <button id="send-btn" class="btn game-mode">Send</button>
+                </div>
+            </div>
+            
+            <div class="status-area">
+                <div class="status-card">
+                    <h3>Character Info</h3>
+                    <div class="status-item">
+                        <span class="status-label">Name:</span>
+                        <span id="char-name" class="status-value">Adventurer</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">HP:</span>
+                        <span id="char-hp" class="status-value">100/100</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="hp-bar" class="progress-fill hp-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Level:</span>
+                        <span id="char-level" class="status-value">1</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">XP:</span>
+                        <span id="char-xp" class="status-value">0/100</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="xp-bar" class="progress-fill xp-bar" style="width: 0%;"></div>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Gold:</span>
+                        <span id="char-gold" class="status-value">0</span>
+                    </div>
+                </div>
+                
+                <div class="status-card">
+                    <h3>Inventory</h3>
+                    <div id="inventory-list">
+                        <div class="inventory-item">
+                            <span class="item-icon">🔦</span>
+                            <span class="item-name">Torch</span>
+                        </div>
+                        <div class="inventory-item">
+                            <span class="item-icon">💧</span>
+                            <span class="item-name">Water Flask</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="status-card">
+                    <h3>Game Stats</h3>
+                    <div class="status-item">
+                        <span class="status-label">Location:</span>
+                        <span id="game-location" class="status-value">Unknown</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Enemies:</span>
+                        <span id="game-enemies" class="status-value">None</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Genre:</span>
+                        <span id="game-genre" class="status-value">Fantasy</span>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <h3>Game Controls</h3>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <button onclick="quickAction('explore')" class="choice-btn" style="margin-bottom: 5px;">🔍 Explore</button>
+                        <button onclick="quickAction('rest')" class="choice-btn" style="margin-bottom: 5px;">💤 Rest</button>
+                        <button onclick="quickAction('inventory')" class="choice-btn" style="margin-bottom: 5px;">🎒 Check Inventory</button>
+                        <button onclick="quickAction('status')" class="choice-btn">📊 Check Status</button>
+                        <div style="margin-top:12px; display:flex; gap:8px; flex-wrap: wrap;">
+                            <button onclick="hunt()" class="choice-btn">🗡️ Hunt</button>
+                            <button onclick="practice()" class="choice-btn">⚔️ Practice</button>
+                            <button onclick="doJob()" class="choice-btn">🛠️ Do Job</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game-mode.js"></script>
+</body>
+</html>  
