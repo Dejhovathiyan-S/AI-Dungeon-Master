@@ -192,7 +192,6 @@ Planned features for future versions:
 - **More Genre Options**
 - **Visual Enhancements**
 
-Click the link to open app
-http://127.0.0.1:5000/
+
 
 
