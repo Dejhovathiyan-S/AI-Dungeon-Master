@@ -192,8 +192,7 @@ Planned features for future versions:
 - **More Genre Options**
 - **Visual Enhancements**
 
-##  Support
+Click the link to open app
+http://127.0.0.1:5000/
 
-For questions or support, please open an issue in the repository or contact the development team.
 
-# AI-Dungeon-Master
